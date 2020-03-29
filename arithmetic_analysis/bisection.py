@@ -3,13 +3,13 @@ import math
 
 def bisection(
     function, a, b
-):  # finds where the function becomes 0 in [a,b] using bolzano
+):  # 二分法：[a,b]区间函数为0的点 finds where the function becomes 0 in [a,b] using bolzano
 
     start = a
     end = b
     if function(a) == 0:  # one of the a or b is a root for the function
         return a
-    elif function(b) == 0:
+    elif function(b) == 0:#elif=else if
         return b
     elif (
         function(a) * function(b) > 0
@@ -27,7 +27,8 @@ def bisection(
             else:
                 start = mid
             mid = start + (end - start) / 2.0
-        return mid
+        return mid 
+    #二分法找函数的根：需要找到端点函数值异号的区间，最后找到的区间长度=10^-7的时候停止，记区间中点为根
 
 
 def f(x):
